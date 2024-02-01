@@ -1,0 +1,109 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: bisque;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color: brown;
+    text-decoration: none;
+}
+
+/*style form navigable bar*/
+.nav-bar {
+    min-height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+/*style form navigable bar menu*/
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+/*nav logo*/
+.nav-logo {
+    font-size: 2rem;
+}
+
+/*links inside navigable item*/
+.nav-link {
+    transition: 1s ease;
+}
+
+.nav-link:hover {
+    color: blue;
+}
+
+/*burger menu style*/
+.veg-burger {
+    display: none;
+    cursor: pointer;
+}
+
+/*for eash horizontal bar of the burger menu*/
+.bar {
+    display: block;
+    width: 30px;
+    height: 4px;
+    margin: 6px auto;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    background-color: brown;
+}
+
+/*media function for display with width below 720p*/
+@media(max-width:720px) {
+    .veg-burger {
+        display: block;
+    }
+
+    .veg-burger.active .bar:nth-child(1) {
+        transform: translateY(14px) rotate(45deg);
+    }
+
+    .veg-burger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .veg-burger.active .bar:nth-child(3) {
+        opacity: 0;
+    }
+
+    .veg-burger.active .bar:nth-child(4) {
+        transform: translateY(-14px) rotate(-45deg);
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 80px;
+        gap: 0;
+        flex-direction: column;
+        background-color: bisque;
+        width: 100%;
+        text-align: center;
+        transition: 0.5s;
+    }
+
+    .nav-item {
+        margin: 14px 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+}
